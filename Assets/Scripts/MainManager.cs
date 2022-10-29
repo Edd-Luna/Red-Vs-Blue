@@ -4,9 +4,12 @@ using UnityEngine;
 using System.IO;
 public class MainManager : MonoBehaviour
 {
- public static MainManager Instance;
+ public static MainManager Instance { get; private set; }// add private ENCAPSULATION
  public int redPlayer;
  public int bluePlayer;
+ public int redScore;
+ public int blueScore;
+ public int gameCount;
 
  private void Awake()
  {
@@ -27,6 +30,8 @@ public class MainManager : MonoBehaviour
 
     public int redPlayer;
     public int bluePlayer;
+    public int redScore;
+    public int blueScore;
 
     }
 
@@ -53,4 +58,30 @@ public class MainManager : MonoBehaviour
         bluePlayer = data.bluePlayer;
     }
     }
+
+    public void SaveScores(int redScore, int blueScore)
+    {
+    SaveData data = new SaveData();
+    data.redScore = redScore;
+    data.blueScore = blueScore;
+
+    string json = JsonUtility.ToJson(data);
+  
+    File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
+
+    
+    public void LoadScores()
+    {
+    string path = Application.persistentDataPath + "/savefile.json";
+    if (File.Exists(path))
+    {
+        string json = File.ReadAllText(path);
+        SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+        redScore = data.redScore;
+        blueScore = data.blueScore;
+    }
+    }
+
 }

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerColor : MonoBehaviour
 {
-
 public void StartNew() //ABSTRACTION
 {
     SceneManager.LoadScene(1);

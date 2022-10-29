@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2339829983510489653}
   - component: {fileID: 2362767147243079231}
   - component: {fileID: 2315873348919065084}
+  - component: {fileID: 1361830798026104067}
   m_Layer: 0
   m_Name: Red Barrel
   m_TagString: Red
@@ -115,3 +116,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1361830798026104067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2317436600217842183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e032016b6b42c0e469592cb56713c45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

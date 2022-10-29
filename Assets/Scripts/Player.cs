@@ -4,10 +4,9 @@ using UnityEngine;
 
 public abstract class Player : MonoBehaviour //INHERITANCE
 {
-    private float speed= 40f;
+    private float speed= 25f;
     private Rigidbody playerRb;
-    public int score = 0;
-    public bool hit = false;
+    public GameManager Manager;
     
     void Start()
     {
@@ -18,13 +17,6 @@ public abstract class Player : MonoBehaviour //INHERITANCE
     void Update()
     {
         MovePlayer(); //ABSTRACTION
-        /*
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        playerRb.AddForce(Vector3.forward * speed * verticalInput);
-        playerRb.AddForce(Vector3.right * speed * horizontalInput);
-        */
         PlayerScore();
         
     }
@@ -38,17 +30,7 @@ public abstract class Player : MonoBehaviour //INHERITANCE
         playerRb.AddForce(Vector3.right * speed * horizontalInput);
     }
 
-    private void OnCollisionEnter(Collision collision) 
-    {
-        if(collision.gameObject.CompareTag("Blue"))
-        {
-            Debug.Log("Player has collied with enemy.");
-            score += 1;
-            Destroy(collision.gameObject);
-        }
-    }
-
-    protected abstract void PlayerScore();
+    protected abstract void PlayerScore();// POLYMORPHISM
   
 }
 
