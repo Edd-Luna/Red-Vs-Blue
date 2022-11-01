@@ -33,6 +33,8 @@ public class BluePlayer : Player //INHERITANCE
             Debug.Log("Player has collied with enemy.");
             blueScore += 1;
             Destroy(collision.gameObject);
+            Instantiate(scoreParticle, transform.position, scoreParticle.transform.rotation);
+            playerAudio.PlayOneShot(scoreSound, 1.0f);
         }
         
         if(collision.gameObject.CompareTag("Red") && !Manager.gameOver)
@@ -40,6 +42,8 @@ public class BluePlayer : Player //INHERITANCE
             Debug.Log("Player has collied with enemy.");
             //Destroy(collision.gameObject);
             Manager.GameOverBlue();
+            Instantiate(failParticle, transform.position, failParticle.transform.rotation);
+            playerAudio.PlayOneShot(failSound, 1.0f);
         }
     }
     protected override void PlayerScore()// POLYMORPHISM
@@ -47,5 +51,5 @@ public class BluePlayer : Player //INHERITANCE
         Debug.Log("score blue = " + blueScore);
         blueScoreText.text ="Blue Score: " + blueScore;
     }
-
+// Edd_Luna
 }

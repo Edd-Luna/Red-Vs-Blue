@@ -32,13 +32,16 @@ public class RedPlayer : Player //INHERITANCE
             Debug.Log("Player has collied with enemyred.");
             redScore += 1;
             Destroy(collision.gameObject);
+            Instantiate(scoreParticle, transform.position, scoreParticle.transform.rotation);
+            playerAudio.PlayOneShot(scoreSound, 1.0f);
         }
 
         if(collision.gameObject.CompareTag("Blue") && !Manager.gameOver)
         {
             Debug.Log("Player has collied with enemy.");
-            //Destroy(collision.gameObject);
             Manager.GameOverRed();
+            Instantiate(failParticle, transform.position, failParticle.transform.rotation);
+            playerAudio.PlayOneShot(failSound, 1.0f);
         }
     }
 
@@ -48,5 +51,5 @@ public class RedPlayer : Player //INHERITANCE
         redScoreText.text ="Red Score: " + redScore;
 
     }
-   
+// Edd_Luna
 }

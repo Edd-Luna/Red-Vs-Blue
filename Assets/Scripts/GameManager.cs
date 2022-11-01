@@ -52,8 +52,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        SelectPlayer();
         gameOver = false;
+        SelectPlayer();
         StartCoroutine(SpawnTarget());
         startButton.gameObject.SetActive(false);
         redScoreText.text ="Red Score: " + MainManager.Instance.redScore;
@@ -124,6 +124,9 @@ public class GameManager : MonoBehaviour
 #else
         Application.Quit(); // original code to quit Unity player
 #endif
+#if (UNITY_WEBGL)
+    Application.Quit();
+#endif
     }
-
+// Edd_Luna
 }
