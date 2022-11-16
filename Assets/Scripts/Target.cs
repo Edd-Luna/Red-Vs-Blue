@@ -18,37 +18,38 @@ public class Target : MonoBehaviour
          if(MainManager.Instance.redPlayer == 1)
          {
             RandomSpawnPos();
-            if( position.x == redPlayer.transform.position.x && position.z == redPlayer.transform.position.z || 
+            if( position.x == redPlayer.transform.position.x && position.z == redPlayer.transform.position.z ||
                 position.x == redPlayer.transform.position.x + 2 && position.z == redPlayer.transform.position.z ||
                 position.x == redPlayer.transform.position.x - 2 && position.z == redPlayer.transform.position.z ||
                 position.x == redPlayer.transform.position.x && position.z == redPlayer.transform.position.z + 2 ||
-                position.x == redPlayer.transform.position.x && position.z == redPlayer.transform.position.z - 2)
+                position.x == redPlayer.transform.position.x && position.z == redPlayer.transform.position.z - 2 )
             {
                 RandomSpawnPos();
-                transform.position = position;
             }
-            else
+            else 
             {
                 transform.position = position;
             }
+            
          }
 
          if(MainManager.Instance.bluePlayer == 1)
         {
             RandomSpawnPos();
-            if(position.x == bluePlayer.transform.position.x && position.z == bluePlayer.transform.position.z ||
-               position.x == bluePlayer.transform.position.x + 2 && position.z == bluePlayer.transform.position.z ||
-               position.x == bluePlayer.transform.position.x - 2 && position.z == bluePlayer.transform.position.z ||
-               position.x == bluePlayer.transform.position.x && position.z == bluePlayer.transform.position.z + 2 ||
-               position.x == bluePlayer.transform.position.x && position.z == bluePlayer.transform.position.z - 2)
+            if( position.x == bluePlayer.transform.position.x && position.z == bluePlayer.transform.position.z ||
+                position.x == bluePlayer.transform.position.x + 2 && position.z == bluePlayer.transform.position.z ||
+                position.x == bluePlayer.transform.position.x - 2 && position.z == bluePlayer.transform.position.z ||
+                position.x == bluePlayer.transform.position.x && position.z == bluePlayer.transform.position.z + 2 ||
+                position.x == bluePlayer.transform.position.x && position.z == bluePlayer.transform.position.z - 2 )
             {
                 RandomSpawnPos();
-                transform.position = position;
             }
-            else
+
+            else 
             {
                 transform.position = position;
             }
+            
         }
     }
 
