@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject blueTarget;
     public RedPlayer currentRedScore;
     public BluePlayer currentBlueScore;
-    private float spawnTime = 2.0f;
+    private float spawnTime = 2.5f;
     public bool gameOver;
     public TextMeshProUGUI gameOverText;
     public Button startButton;

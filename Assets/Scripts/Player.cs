@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Player : MonoBehaviour //INHERITANCE
 {
-    private float speed= 20f;
+    private float speed= 15f;
     private Rigidbody playerRb;
     public GameManager Manager;
     public ParticleSystem scoreParticle;
