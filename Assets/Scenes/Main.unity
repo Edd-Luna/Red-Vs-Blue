@@ -928,7 +928,7 @@ GameObject:
   - component: {fileID: 932180021}
   - component: {fileID: 932180020}
   m_Layer: 5
-  m_Name: Exit
+  m_Name: Reload
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1001,7 +1001,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 72157642}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Exit
+        m_MethodName: Reload
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Reload
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe615c40225014542b62517f6f0fabf4, type: 2}
   m_sharedMaterial: {fileID: 21722484755586150, guid: fe615c40225014542b62517f6f0fabf4, type: 2}

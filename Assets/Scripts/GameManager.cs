@@ -117,16 +117,13 @@ public class GameManager : MonoBehaviour
     MainManager.Instance.blueScore = currentBlueScore.blueScore;
     MainManager.Instance.SaveScores(MainManager.Instance.redScore, MainManager.Instance.blueScore);
     }
-    public void Exit()
+    public void Reload()
     {
-#if UNITY_EDITOR
-        EditorApplication.ExitPlaymode();
-#else
-        Application.Quit(); // original code to quit Unity player
-#endif
-#if (UNITY_WEBGL)
-    Application.Quit();
-#endif
+    SceneManager.LoadScene(0);
+    MainManager.Instance.gameCount = 0;
+    MainManager.Instance.redScore = 0;
+    MainManager.Instance.blueScore = 0;
+    MainManager.Instance.SaveScores(MainManager.Instance.redScore, MainManager.Instance.blueScore);
     }
 // Edd_Luna
 }
